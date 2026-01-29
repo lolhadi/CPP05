@@ -6,7 +6,7 @@
 /*   By: muhabin- <muhabin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 14:14:54 by muhabin-          #+#    #+#             */
-/*   Updated: 2026/01/23 15:26:23 by muhabin-         ###   ########.fr       */
+/*   Updated: 2026/01/27 11:33:35 by muhabin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ class Bureaucrat{
 
 	public:
 	// Constructor & Destructor
-	Bureaucrat();
-	Bureaucrat(std::string name, int grade);
-	~Bureaucrat();
-	Bureaucrat(const Bureaucrat &other);
-	Bureaucrat& operator= (const Bureaucrat &other);
+		Bureaucrat();
+		Bureaucrat(std::string const &name, int grade);
+		~Bureaucrat();
+		Bureaucrat(const Bureaucrat &other);
+		Bureaucrat& operator = (const Bureaucrat &other);
 
 	// Getter
 	std::string const	&getName() const; // Double const get the result and the function cannot change
@@ -53,8 +53,7 @@ class Bureaucrat{
 		public:
 			virtual char const *what(void) const throw();
 	};
-	std::ostream &operator<<(std::ostream &str, Bureaucrat const &Bureaucrat);
-
 };
+std::ostream& operator<<(std::ostream &str, Bureaucrat const &bureaucrat);
 
 #endif
