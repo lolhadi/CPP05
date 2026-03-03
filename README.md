@@ -28,17 +28,40 @@ What is the outcome?
 
 3) Ex01()
 
-	# So think this exercise as filling up a goverment form(but got some requirement)
+	# So think this exercise as filling up a goverment aform(but got some requirement)
 	# From the subject pdf:
-	 :	a class named Form:
+	 :	a class named AForm:
 	 	# have a constant name (cannot be modify)
 		# has a boolean to detemined whether it sign or not (should starts with not signed)
 		# so to signed it should has a grade
-		# and to execute the form it should also have grade
+		# and to execute the aform it should also have grade
 	# This attribute should be in private (so have to have getter and setter)
-	# The grade in the Form also need to follow the rules in Bureaucrat exceptions
-	# Need the Overload insertion to prints the the form's information
+	# The grade in the AForm also need to follow the rules in Bureaucrat exceptions
+	# Need the Overload insertion to prints the the aform's inaformation
 	# Member Functions :
-		# Form class gets > beSigned(): when a Bureaucrat tries to signed to form, it check whether the grade is enough to signed
+		# AForm class gets > beSigned(): when a Bureaucrat tries to signed to aform, it check whether the grade is enough to signed
 			if not throw exception
-		# Bereaucrat class gets > signForm(): if the form is signed successfully should prints something,if not aslo need something with reason
+		# Bereaucrat class gets > signAForm(): if the aform is signed successfully should prints something,if not aslo need something with reason
+
+4) Ex02
+
+	# The aform class should change into abstract class and the attributes remains private
+	# Need some concrete class
+		# ShrubberyCreationAForm: Create text file with ASCII art trees if (sign grade < 141 and exec grade < 137)
+		# RobotomyRequestAForm: tries to turn someone into a robot(When executed got 50/50 it will success or failed) (sign grade < 72 && execute grade <45)
+		# PresidentalPardonAForm: President tries to pardon someone (sign grade < 25 && execute grade < 5)
+	# all the 3 aform takes one parameter:the target
+		# Graded are hardcoded in each class , no in constructor, inherite from AForm
+	# A Member Function
+	# Execute() Function
+		# It does Execute the AForm concrete class: Only execute:
+			* If The AForm is signed
+			* And Have a good enough grade
+		# Better Put in AAForm()
+			@ if all requirement pass, doAction()(do each stuff)
+	# executeAForm() for the bureaucrat
+		# if success print something
+		# if failed print error message
+	# why protected?
+		# so in the subject pdf example: it uses the concrete class directly,
+		# so only Aform and the concrete class(derived class can use the action())
