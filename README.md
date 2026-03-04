@@ -65,3 +65,18 @@ What is the outcome?
 	# why protected?
 		# so in the subject pdf example: it uses the concrete class directly,
 		# so only Aform and the concrete class(derived class can use the action())
+
+5) Ex03
+	# why the question ask makeForm() to return a Pointer* to a AForm
+		# if return by value, it cannot because AForm is an abstract class
+		# if return by reference, it will destroyed when the function end.
+		# Why Pointer?
+			> Because it will create the form with (new) on the heap
+			> form still exist after function ends
+			> get a pointer to the form
+			> need to delete manually later
+	# Valid Form Names
+		> All lowercase, with spaces
+	# Approach
+		> Form Name(strings) in array
+		> then loop through to find match(switch case)
